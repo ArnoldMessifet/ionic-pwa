@@ -7,6 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PipesModule } from '../pipes/pipes.module';
+import { CameraPageModule } from '../pages/camera/camera.module';
+import { DevicePageModule } from '../pages/device/device.module';
+import { Camera } from '@ionic-native/camera';
+import { ImagesProvider } from '../providers/images/images';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { PipesModule } from '../pipes/pipes.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    PipesModule
+    PipesModule,
+    CameraPageModule,
+    DevicePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -26,7 +32,9 @@ import { PipesModule } from '../pipes/pipes.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    ImagesProvider
   ]
 })
 export class AppModule {}

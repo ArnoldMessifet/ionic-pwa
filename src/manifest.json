@@ -2,7 +2,7 @@
   "name": "Ionic PWA",
   "short_name": "Ionic PWA",
   "start_url": "index.html",
-  "display": "fullscreen",
+  "display": "browser",
   "icons": [{
     "src": "assets/imgs/logo.png",
     "sizes": "512x512",
