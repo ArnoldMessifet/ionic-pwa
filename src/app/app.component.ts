@@ -12,7 +12,7 @@ import { CameraPage } from '../pages/camera/camera';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = HomePage;
+  rootPage: string = 'HomePage';
   featurePages: Array<{title: string, icon: string, component: any}>;
 
   constructor(public platform: Platform,
@@ -21,8 +21,8 @@ export class MyApp {
     this.initializeApp();
 
     this.featurePages = [
-      { title: 'Device', icon: 'phone-portrait', component: DevicePage },
-      { title: 'Camera', icon: 'camera', component: CameraPage },
+      { title: 'Device', icon: 'phone-portrait', component: 'DevicePage' },
+      { title: 'Camera', icon: 'camera', component: 'CameraPage' },
     ];
   }
 

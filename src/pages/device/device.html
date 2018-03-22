@@ -6,7 +6,19 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  To Be Continued...
+
+  <h3>Access information about the underlying device and platform.</h3>
+  
+  <ion-list *ngIf="deviceData">
+    <ion-item>cordova: {{ deviceData.cordova }}</ion-item>
+    <ion-item>isVirtual: {{ deviceData.isVirtual }}</ion-item>
+    <ion-item>manufacturer: {{ deviceData.manufacturer }}</ion-item>
+    <ion-item>model: {{ deviceData.model }}</ion-item>
+    <ion-item>platform: {{ deviceData.platform }}</ion-item>
+    <ion-item>serial: {{ deviceData.serial }}</ion-item>
+    <ion-item>uuid: {{ deviceData.uuid }}</ion-item>
+    <ion-item>version: {{ deviceData.version }}</ion-item>
+  </ion-list>
+  
 </ion-content>

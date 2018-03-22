@@ -5,36 +5,35 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { PipesModule } from '../pipes/pipes.module';
+import { HomePageModule } from '../pages/home/home.module';
 import { CameraPageModule } from '../pages/camera/camera.module';
 import { DevicePageModule } from '../pages/device/device.module';
-import { Camera } from '@ionic-native/camera';
 import { ImagesProvider } from '../providers/images/images';
+import { Camera } from '@ionic-native/camera';
+import { Device } from '@ionic-native/device';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    PipesModule,
+    HomePageModule,
     CameraPageModule,
     DevicePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ImagesProvider,
     Camera,
-    ImagesProvider
+    Device
   ]
 })
 export class AppModule {}

@@ -20,10 +20,6 @@ export class CameraPage {
               private imagesPrv: ImagesProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CameraPage');
-  }
-
   /**
    *
    * @returns {Promise<void>}
