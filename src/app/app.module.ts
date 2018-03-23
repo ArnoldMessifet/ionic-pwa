@@ -3,14 +3,16 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Camera } from '@ionic-native/camera';
+import { Device } from '@ionic-native/device';
+import { Dialogs } from '@ionic-native/dialogs';
 
 import { MyApp } from './app.component';
 import { HomePageModule } from '../pages/home/home.module';
 import { CameraPageModule } from '../pages/camera/camera.module';
 import { DevicePageModule } from '../pages/device/device.module';
+import { DialogsPageModule } from '../pages/dialogs/dialogs.module';
 import { ImagesProvider } from '../providers/images/images';
-import { Camera } from '@ionic-native/camera';
-import { Device } from '@ionic-native/device';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { Device } from '@ionic-native/device';
     IonicModule.forRoot(MyApp),
     HomePageModule,
     CameraPageModule,
-    DevicePageModule
+    DevicePageModule,
+    DialogsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,7 +36,8 @@ import { Device } from '@ionic-native/device';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ImagesProvider,
     Camera,
-    Device
+    Device,
+    Dialogs
   ]
 })
 export class AppModule {}

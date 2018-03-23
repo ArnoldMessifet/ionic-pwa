@@ -23,6 +23,7 @@ export class MyApp {
     this.featurePages = [
       { title: 'Device', icon: 'phone-portrait', component: 'DevicePage' },
       { title: 'Camera', icon: 'camera', component: 'CameraPage' },
+      { title: 'Dialogs', icon: 'chatboxes', component: 'DialogsPage' },
     ];
   }
 
