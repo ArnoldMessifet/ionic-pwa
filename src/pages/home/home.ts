@@ -17,8 +17,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.platforms = this.platform.platforms();
     this.versions = this.platform.versions();
-    console.log('platforms', this.platforms);
-    console.log('versions', this.versions);
   }
 
   toggleMenu() {
