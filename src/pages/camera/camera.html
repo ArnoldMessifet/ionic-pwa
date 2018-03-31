@@ -6,7 +6,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <!--<button ion-button block (click)="takePictureFromGalleryPlugin()"> Take a picture from gallery (Plugin)</button>-->
 
@@ -31,23 +30,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-grid>
-    <ion-row>
-
-      <ion-col col-6>
-        <button ion-button block
-                (click)="takePictureHTML5()">
-          <ion-icon name="camera" padding-right></ion-icon>HTML5
-        </button>
-      </ion-col>
-
-      <ion-col col-6>
-        <button ion-button block
-                (click)="takePictureCameraPlugin()">
-          <ion-icon name="camera" padding-right></ion-icon>Cordova
-        </button>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
+  <platform-choice [cordovaPlugin]="plugin"
+                   [iconName]="iconName"
+                   (selected)="setChoice($event)"></platform-choice>
 </ion-footer>
