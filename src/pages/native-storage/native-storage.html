@@ -1,0 +1,117 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Native Storage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3>Native storage of variables in Android and iOS</h3>
+  <p>Select Cordova plugin or HTML5 localStorage features bellow.</p>
+
+  <!-- Display buttons for Cordova features -->
+
+  <ion-card class="cordova" *ngIf="isCordovaDisplayed">
+    <ion-card-header>Cordova Plugin Selected</ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="form" (ngSubmit)="setItemCordova()">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Data1</ion-label>
+            <ion-input type="text" formControlName="data1"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Data2</ion-label>
+            <ion-input type="text" formControlName="data2"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Data3</ion-label>
+            <ion-input type="text" formControlName="data3"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button type="submit" block [disabled]="!form.valid">Store Data</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button type="button" block color="secondary"
+                      (click)="getItemCordova()">Retrieve Data
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div *ngIf="data">{{ data | json }}</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+
+  <!-- Display buttons for Ionic 3 features -->
+
+  <ion-card class="ionic" *ngIf="isIonicDisplayed">
+    <ion-card-header>HTML 5 localStorage Selected</ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="form" (ngSubmit)="setItemIonic()">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Data1</ion-label>
+            <ion-input type="text" formControlName="data1"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Data2</ion-label>
+            <ion-input type="text" formControlName="data2"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Data3</ion-label>
+            <ion-input type="text" formControlName="data3"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-grid>
+
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button type="submit"
+                      block [disabled]="!form.valid">Store Data
+              </button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button type="button"
+                      block color="secondary"
+                      (click)="getItemIonic()">Retrieve Data
+              </button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <div *ngIf="data">{{ data | json }}</div>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <platform-choice [cordovaPlugin]="plugin"
+                   [iconName]="iconName"
+                   (selected)="setChoice($event)"></platform-choice>
+</ion-footer>
+

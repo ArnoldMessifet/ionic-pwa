@@ -12,7 +12,10 @@ import { HomePageModule } from '../pages/home/home.module';
 import { CameraPageModule } from '../pages/camera/camera.module';
 import { DevicePageModule } from '../pages/device/device.module';
 import { DialogsPageModule } from '../pages/dialogs/dialogs.module';
+import { NativeStoragePageModule } from '../pages/native-storage/native-storage.module';
 import { ImagesProvider } from '../providers/images/images';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { ImagesProvider } from '../providers/images/images';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     HomePageModule,
     CameraPageModule,
     DevicePageModule,
-    DialogsPageModule
+    DialogsPageModule,
+    NativeStoragePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +43,8 @@ import { ImagesProvider } from '../providers/images/images';
     ImagesProvider,
     Camera,
     Device,
-    Dialogs
+    Dialogs,
+    NativeStorage
   ]
 })
 export class AppModule {}

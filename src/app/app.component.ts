@@ -3,10 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { DevicePage } from '../pages/device/device';
-import { CameraPage } from '../pages/camera/camera';
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,6 +20,7 @@ export class MyApp {
       { title: 'Device', icon: 'phone-portrait', component: 'DevicePage' },
       { title: 'Camera', icon: 'camera', component: 'CameraPage' },
       { title: 'Dialogs', icon: 'chatboxes', component: 'DialogsPage' },
+      { title: 'Native Storage', icon: 'archive', component: 'NativeStoragePage' },
     ];
   }
 
