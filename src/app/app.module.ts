@@ -16,6 +16,8 @@ import { NativeStoragePageModule } from '../pages/native-storage/native-storage.
 import { ImagesProvider } from '../providers/images/images';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { InAppBrowserPageModule } from '../pages/in-app-browser/in-app-browser.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CameraPageModule,
     DevicePageModule,
     DialogsPageModule,
-    NativeStoragePageModule
+    NativeStoragePageModule,
+    InAppBrowserPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +47,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Camera,
     Device,
     Dialogs,
-    NativeStorage
+    NativeStorage,
+    InAppBrowser
   ]
 })
 export class AppModule {}

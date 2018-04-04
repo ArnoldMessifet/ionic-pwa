@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>in-app-browser</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3>Launches in app Browser</h3>
+</ion-content>
+
+<ion-footer>
+  <platform-choice [cordovaPlugin]="plugin"
+                   [iconName]="iconName"
+                   (selected)="setChoice($event)"></platform-choice>
+</ion-footer>
