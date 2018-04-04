@@ -1,0 +1,29 @@
+<ion-header>
+  
+  <ion-navbar>
+    <ion-title>Date Picker V3</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3>The DatePicker plugin allows the user to fetch date or time using native dialogs.</h3>
+  
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime #inputDate
+                  displayFormat="DD/MM/YYYY"
+                  [disabled]="isDisabled"
+                  (ionChange)="disable()"
+                  (ionCancel)="disable()"
+                  [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+  
+</ion-content>
+
+<ion-footer>
+  <platform-choice [cordovaPlugin]="plugin"
+                   [iconName]="iconName"
+                   (selected)="setChoice($event)"></platform-choice>
+</ion-footer>

@@ -18,6 +18,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { InAppBrowserPageModule } from '../pages/in-app-browser/in-app-browser.module';
+import { DatePickerPageModule } from '../pages/date-picker/date-picker.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { InAppBrowserPageModule } from '../pages/in-app-browser/in-app-browser.m
     DialogsPageModule,
     NativeStoragePageModule,
     InAppBrowserPageModule,
+    DatePickerPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

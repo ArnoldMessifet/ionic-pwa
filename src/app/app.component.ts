@@ -22,6 +22,7 @@ export class MyApp {
       { title: 'Dialogs', icon: 'chatboxes', component: 'DialogsPage' },
       { title: 'Native Storage', icon: 'archive', component: 'NativeStoragePage' },
       { title: 'In App Browser', icon: 'globe', component: 'InAppBrowserPage' },
+      { title: 'Date Picker', icon: 'calendar', component: 'DatePickerPage' },
     ];
   }
 
